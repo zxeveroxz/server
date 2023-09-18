@@ -17,4 +17,9 @@ class Home extends BaseController
         $n->uno();
         return "nuevo2020";
     }
+
+    public function buscar(): string
+    {
+        return "aqui los ruc que no se encuentran";
+    }
 }
