@@ -20,6 +20,7 @@ class Home extends BaseController
 
     public function buscar(): string
     {
+        d(session());
         return "aqui los ruc que no se encuentran";
     }
 }

@@ -22,6 +22,7 @@ use Psr\Log\LoggerInterface;
 abstract class BaseControllerAdmin extends Controller
 {
 
+
     public $RUC;
     /**
      * Instance of the main Request object.
@@ -37,7 +38,7 @@ abstract class BaseControllerAdmin extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ['url', 'form','Ayudas'];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -59,6 +60,9 @@ abstract class BaseControllerAdmin extends Controller
     }
 
    
-    
+    public function __construct(){
+        $uri = service('uri');
+        $this->RUC = $uri->getSegments()[0];                
+    }
 
 }
