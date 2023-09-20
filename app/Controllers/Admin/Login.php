@@ -2,6 +2,7 @@
 
 use App\Controllers\Admin\BaseControllerAdmin;
 use App\Models\EmpresaModel;
+use App\Models\EmpresaInfoModel;
 
 
 class Login extends BaseControllerAdmin{
@@ -11,8 +12,8 @@ class Login extends BaseControllerAdmin{
     }
 
     public function comercios(){
-        $empresa = model("EmpresaModel");
-        $rows = $empresa->get()->getResultObject();      
+        $empresa = model("EmpresaModel");              
+        $rows =  $empresa->findAll();// $empresa->get()->getResultObject();      
 
         return view('Admin/comercios',['ROWS'=>$rows]);
     }

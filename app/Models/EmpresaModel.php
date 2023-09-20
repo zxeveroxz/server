@@ -46,5 +46,10 @@ class EmpresaModel extends Model
         return $this->db->table('empresa')->where($columna,$valor)->get()->getRow();
         
     }
-
+/*
+    public function empresaInfo()
+    {
+        return $this->hasOne('App\Models\EmpresaInfoModel', 'empresa_id', 'empresa_id_empresa');
+    }
+*/
 }

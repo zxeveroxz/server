@@ -1,11 +1,27 @@
 <?php
+
 namespace App\Entities;
 
-use CodeIgniter\Entity;
+use CodeIgniter\Entity\Entity;
 
-class Empresa extends Entity {
+use CodeIgniter\I18n\Time;
 
-    protected $dates = ['created_at','updated_at'];
+class Empresa extends Entity
+{
 
-  
+    protected $dates = ['created_at', 'updated_at'];
+
+
+    
+    protected function getEmpresaInfo()
+    {
+        if(!empty($this->attributes['empresa_id'])){
+            $empresaInfo = model("EmpresaInfoModel");
+            return $empresaInfo->where('empresa_id_empresa', $this->attributes['empresa_id'])->first(); 
+        }
+        return $this;
+    }
+    
+
+   
 }
