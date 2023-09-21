@@ -11,6 +11,10 @@ class Login extends BaseControllerAdmin{
         return "login de inicio para admin";
     }
 
+    public function login(){      
+        return view('Admin/login/contenido',[]);
+    }
+
     public function comercios(){
         $empresa = model("EmpresaModel");              
         $rows =  $empresa->findAll();// $empresa->get()->getResultObject();      

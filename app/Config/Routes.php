@@ -19,6 +19,7 @@ $routes->group('/([0-9]+)/admin',['namespace'=>'App\Controllers\Admin','filter' 
     $routes->get('/', 'Login::index',['as'=>'login']);    
     $routes->get('registro', 'Registro::index');
     
+    $routes->get('login', 'Login::login',['as'=>'adminLogin']);    
 });
 
 
